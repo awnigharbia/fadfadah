@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+#root,
+.app-wrapper,
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #2d313c;
+}
+
+.app .form-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app .form-wrap img {
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.app .form-wrap .form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  height: 400px;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.app .form-wrap .form .form-normal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  border-right: 2px solid gray;
+}
+.app .form-wrap .form .form-normal #err {
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin-top: -10px;
+  margin: 0px;
+  background-color: red;
+}
+
+.app .form-wrap .form .form-normal #errS {
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin-top: -20px;
+  background-color: red;
+}
+
+.app .form-wrap .form .form-normal h1 {
+  font-weight: 300;
+}
+
+.app .form-wrap .form .form-normal input[type='text']:first-of-type {
+  margin-top: 40px;
+}
+
+.app .form-wrap .form .form-normal input[type='text'],
+.app .form-wrap .form .form-normal input[type='password'],
+.app .form-wrap .form-reset input[type='text'] {
+  margin-top: 10px;
+  padding: 6px 20px;
+  font-size: 13px;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+.app .form-wrap .form .form-normal input[type='text']:focus,
+.app .form-wrap .form .form-normal input[type='password']:focus,
+.app .form-wrap .form-reset input[type='text']:focus {
+  background-color: white;
+  border: 2px solid rgba(114, 114, 255, 0.8);
+  transition: 0.2s ease;
+}
+
+.app .form-wrap .form .form-normal button,
+.app .form-wrap .form-reset button {
+  margin-top: 20px;
+  color: white;
+  padding: 10px 60px;
+  background-color: #7c4dff;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  user-select: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 1px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.app .form-wrap .form .form-normal #resetpassword {
+  margin-top: 20px;
+  color: rgba(114, 114, 255, 1);
+  font-size: 14px;
+}
+
+.app .form-wrap .form .form-normal p {
+  color: #616161;
+}
+
+.app .form-wrap .form .form-normal p a {
+  color: rgba(114, 114, 255, 1);
+}
+
+.app .form-wrap .form .form-social {
+  background-image: url('./imgs/doodles.png');
+  height: 100%;
+  width: 50%;
+}
+
+.app .form-wrap .form .form-social .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 0px;
+  padding: 50px 0px 0px 0px;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+}
+
+.app .form-wrap .form .form-social .content h1 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 30px;
+  padding: 5px;
+  color: white;
+  background-color: rgba(114, 114, 255, 1);
+}
+
+.app .form-wrap .form .form-social .content .socialWidget {
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 3px 0;
+  width: 70%;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 1px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.app .form-wrap .form .form-social .content .socialWidget p {
+  display: inline-block;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.app .form-wrap .form .form-social .content .socialWidget img {
+  position: relative;
+  margin: 2px 0px 0px 0px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.app .form-wrap .form-reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+  width: 40%;
+  height: 30%;
+  background-color: white;
+}
