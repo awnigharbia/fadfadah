@@ -1,9 +1,9 @@
-import React from 'react'
-import {Helmet} from 'react-helmet'
+import React from "react";
+import { Helmet } from "react-helmet";
 
-import '../css/Wall.css'
-import loveMessage from '../../imgs/love-message.png'
-import LoadMessages from './loadMessages'
+import "../css/Wall.css";
+import loveMessage from "../../imgs/love-message.png";
+import LoadMessages from "./loadMessages";
 
 export default function DailyMsg() {
   return (
@@ -17,5 +17,5 @@ export default function DailyMsg() {
       <span>Every 24 hours you'll get a new msg !</span>
       <LoadMessages />
     </div>
-  )
+  );
 }

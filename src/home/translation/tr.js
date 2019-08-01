@@ -1,50 +1,50 @@
-import React, {Component} from 'react'
-import {IntlProvider, addLocaleData} from 'react-intl'
-import En from 'react-intl/locale-data/en'
-import Ar from 'react-intl/locale-data/ar'
-import {flattenMessages} from './utils'
-import messages from './messages'
-import App from '../../App'
+import React, { Component } from "react";
+import { IntlProvider, addLocaleData } from "react-intl";
+import En from "react-intl/locale-data/en";
+import Ar from "react-intl/locale-data/ar";
+import { flattenMessages } from "./utils";
+import messages from "./messages";
+import App from "../../App";
 
-addLocaleData([...En, ...Ar])
+addLocaleData([...En, ...Ar]);
 
 let local =
   (navigator.languages && navigator.languages[0]) ||
   navigator.language ||
   navigator.userLanguage ||
-  'en-US'
+  "en-US";
 
 // split the language
-var language = local.split('-').shift()
+var language = local.split("-").shift();
 
 export default class HomeTr extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      language: language,
-    }
+      language: language
+    };
   }
   changeToEnglish = () => {
-    if (this.state.language === 'en') {
-      return
+    if (this.state.language === "en") {
+      return;
     } else {
       this.setState({
-        language: 'en',
-      })
+        language: "en"
+      });
     }
-  }
+  };
   changeToArabic = () => {
-    if (this.state.language === 'ar') {
-      return
+    if (this.state.language === "ar") {
+      return;
     } else {
       this.setState({
-        language: 'ar',
-      })
+        language: "ar"
+      });
     }
-  }
+  };
   render() {
-    const language = this.state.language
+    const language = this.state.language;
     return (
       <IntlProvider
         locale={language}
@@ -55,6 +55,6 @@ export default class HomeTr extends Component {
           changeToEnglish={this.changeToEnglish}
         />
       </IntlProvider>
-    )
+    );
   }
 }

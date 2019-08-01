@@ -1,8 +1,8 @@
-import React from 'react'
-import '../css/Wall.css'
+import React from "react";
+import "../css/Wall.css";
 
 //imgs
-import support from '../../imgs/support.png'
+import support from "../../imgs/support.png";
 
 const Support = props => {
   return (
@@ -16,7 +16,7 @@ const Support = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Support
+export default Support;

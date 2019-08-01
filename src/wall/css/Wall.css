@@ -353,7 +353,7 @@ nav .links-wrapper .links a:hover {
 .wa .tags p,
 .modal-body-signup p {
   display: inline-block;
-  margin: 0;
+  margin-top: 0px;
   margin-left: 5px;
   padding: 10px 20px;
   font-size: 15px;
@@ -366,6 +366,8 @@ nav .links-wrapper .links a:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px 0px;
   transition: 0.2s ease-in-out;
 }
+
+
 
 .modal-body-signup p:hover {
   transform: scale(1.05);
@@ -389,6 +391,11 @@ nav .links-wrapper .links a:hover {
 
   transition: 0.2s ease-in-out;
   box-shadow: rgba(90, 90, 255, 0.5) 0px 2px 6px 0px;
+}
+
+.modal-bottom button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
 }
 
 .modal-bottom button:hover {
@@ -2042,7 +2049,7 @@ input:checked + .slider:before {
   padding: 5px 20px;
   background-color: white;
   border-radius: 25px;
-  box-shadow:0px 5px 20px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.02);
 }
 
 .modal-search-input input[type='text'] {
@@ -2053,7 +2060,6 @@ input:checked + .slider:before {
   font-size: 15px;
   font-weight: 500;
 }
-
 
 #br {
   width: 100%;

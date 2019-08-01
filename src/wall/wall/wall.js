@@ -1,16 +1,16 @@
-import React from 'react'
-import {injectIntl} from 'react-intl'
-import '../css/Wall.css'
-import {Helmet} from 'react-helmet'
+import React from "react";
+import { injectIntl } from "react-intl";
+import "../css/Wall.css";
+import { Helmet } from "react-helmet";
 
 //components
-import NewPost from '../post/addPost'
-import Tags from './tags/'
-import Posts from './posts/loadPosts'
-import Support from '../widgets/support'
-import SocialMedial from '../widgets/social'
+import NewPost from "../post/addPost";
+import Tags from "./tags/";
+import Posts from "./posts/loadPosts";
+import Support from "../widgets/support";
+import SocialMedial from "../widgets/social";
 
-function Wall({intl}) {
+function Wall({ intl }) {
   return (
     <>
       <Helmet>
@@ -26,12 +26,12 @@ function Wall({intl}) {
 
           <div className="right">
             <SocialMedial />
-            <Support msg={intl.formatMessage({id: 'support.h1'})} />
+            <Support msg={intl.formatMessage({ id: "support.h1" })} />
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default injectIntl(Wall)
+export default injectIntl(Wall);

@@ -1,14 +1,14 @@
-import React from 'react'
-import TextareaAutosize from 'react-autosize-textarea'
-import {useMutation} from 'react-apollo-hooks'
-import '../css/Wall.css'
-import gql from 'graphql-tag'
-import {Formik} from 'formik'
-import {useSetState} from '../../hooks/useSetState'
-import {SharePostSchema} from './postValidation'
-import Topics from './topics'
-import BottomPost from './bottomPost'
-import {Close} from 'grommet-icons'
+import React from "react";
+import TextareaAutosize from "react-autosize-textarea";
+import { useMutation } from "react-apollo-hooks";
+import "../css/Wall.css";
+import gql from "graphql-tag";
+import { Formik } from "formik";
+import { useSetState } from "../../hooks/useSetState";
+import { SharePostSchema } from "./postValidation";
+import Topics from "./topics";
+import BottomPost from "./bottomPost";
+import { Close } from "grommet-icons";
 
 const CREATE_STORY = gql`
   mutation CreateStory($body: String!, $hashtags: [HashtagWhereUniqueInput!]!) {
@@ -17,18 +17,18 @@ const CREATE_STORY = gql`
       body
     }
   }
-`
+`;
 const initialValues = {
-  post: '',
-  selectedTags: [],
-}
+  post: "",
+  selectedTags: []
+};
 
 export default function NewPost() {
   const [state, setState] = useSetState({
-    close: true,
-  })
+    close: true
+  });
 
-  const addStory = useMutation(CREATE_STORY)
+  const addStory = useMutation(CREATE_STORY);
 
   return (
     <div className="post-wrapper">
@@ -39,13 +39,13 @@ export default function NewPost() {
         validateOnChange={true}
         onSubmit={(values, actions) => {
           addStory({
-            variables: {body: values.post, hashtags: values.selectedTags},
+            variables: { body: values.post, hashtags: values.selectedTags },
             update: (proxy, data) => {
-              actions.setSubmitting(false)
+              actions.setSubmitting(false);
 
-              actions.resetForm(initialValues)
-            },
-          })
+              actions.resetForm(initialValues);
+            }
+          });
         }}
         render={({
           setValues,
@@ -55,14 +55,14 @@ export default function NewPost() {
           handleSubmit,
           errors,
           isSubmitting,
-          resetForm,
+          resetForm
         }) => {
           return (
             <form className="addPost" onSubmit={handleSubmit}>
               <Close
                 onClick={() => resetForm(initialValues)}
                 id="close"
-                style={{display: values.post !== '' ? 'block' : 'none'}}
+                style={{ display: values.post !== "" ? "block" : "none" }}
               />
               <div className="add-post-text">
                 <TextareaAutosize
@@ -84,9 +84,9 @@ export default function NewPost() {
                 isSubmitting={isSubmitting}
               />
             </form>
-          )
+          );
         }}
       />
     </div>
-  )
+  );
 }

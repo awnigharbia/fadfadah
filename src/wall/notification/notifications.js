@@ -1,12 +1,12 @@
-import React from 'react'
-import '../css/Wall.css'
-import {Helmet} from 'react-helmet'
+import React from "react";
+import "../css/Wall.css";
+import { Helmet } from "react-helmet";
 
 //imgs
-import notificationImg from '../../imgs/notification.jpg'
+import notificationImg from "../../imgs/notification.jpg";
 
 //Components
-import LoadNotifications from './loadNotifications'
+import LoadNotifications from "./loadNotifications";
 
 export default function Notification() {
   return (
@@ -20,5 +20,5 @@ export default function Notification() {
 
       <LoadNotifications />
     </div>
-  )
+  );
 }

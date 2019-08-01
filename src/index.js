@@ -1,22 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-} from 'react-router-dom'
-import registerServiceWorker from './registerServiceWorker'
-import {ApolloProvider} from 'react-apollo-hooks'
-import {ApolloProvider as ApolloProviderOfficial} from 'react-apollo'
-import {client} from './apolloClient'
-import {Provider} from './hooks/useAuthenticatedUser'
-import Auth from './auth'
+  Redirect
+} from "react-router-dom";
+import registerServiceWorker from "./registerServiceWorker";
+import { ApolloProvider } from "react-apollo-hooks";
+import { ApolloProvider as ApolloProviderOfficial } from "react-apollo";
+import { client } from "./apolloClient";
+import { Provider } from "./hooks/useAuthenticatedUser";
+import Auth from "./auth";
 
 //pages
-import HomeTr from './home/translation/tr'
-import WallTr from './wall/translation/tr'
+import HomeTr from "./home/translation/tr";
+import WallTr from "./wall/translation/tr";
 
 ReactDOM.render(
   <Router>
@@ -28,9 +28,9 @@ ReactDOM.render(
               path="/account/"
               render={() => {
                 if (Auth.isUserAuthenticated()) {
-                  return <WallTr />
+                  return <WallTr />;
                 } else {
-                  return <Redirect to="/" />
+                  return <Redirect to="/" />;
                 }
               }}
             />
@@ -38,9 +38,9 @@ ReactDOM.render(
               path="/"
               render={() => {
                 if (Auth.isUserAuthenticated()) {
-                  return <Redirect to="/account/wall" />
+                  return <Redirect to="/account/wall" />;
                 } else {
-                  return <HomeTr />
+                  return <HomeTr />;
                 }
               }}
             />
@@ -49,6 +49,6 @@ ReactDOM.render(
       </ApolloProvider>
     </ApolloProviderOfficial>
   </Router>,
-  document.getElementById('root'),
-)
-registerServiceWorker()
+  document.getElementById("root")
+);
+registerServiceWorker();

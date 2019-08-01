@@ -1,43 +1,23 @@
 import React from 'react'
-import gql from 'graphql-tag'
-import {useQuery, useMutation} from 'react-apollo-hooks'
 import _ from 'lodash'
 import withContext from '../../../hooks/useAuthenticatedUser'
-import {updateFollowedHashtags} from '../tags/resolvers'
 import MyLoader from '../tags/myLoader'
 
-const GET_HASHTAGS = gql`
-  {
-    hashtags {
-      id
-      title
-    }
-  }
-`
-
-const FOLLOW_HASHTAG = gql`
-  mutation followHashtag($hashtagId: String!) {
-    followHashtag(hashtagId: $hashtagId) {
-      hashtags {
-        id
-        title
-      }
-    }
-  }
-`
-
-function LoadHashtags({user}) {
-  const {loading, error, data} = useQuery(GET_HASHTAGS)
-  const followHashtag = useMutation(FOLLOW_HASHTAG, {
-    update: updateFollowedHashtags,
-  })
-
+function LoadHashtags({
+  loading,
+  error,
+  hashtags,
+  user,
+  followHashtag,
+  selectedTags,
+  setState,
+}) {
   if (loading) return <MyLoader color="white" />
   if (error) return <p>Something went wrong!</p>
 
   return (
     <div className="modal-body-signup">
-      {data.hashtags.map(i => {
+      {hashtags.map(i => {
         return (
           <p
             key={i.id}
@@ -48,6 +28,9 @@ function LoadHashtags({user}) {
             }
             onClick={e => {
               e.target.classList.add('activeHash')
+              setState({
+                selectedTags: [...selectedTags, i.id],
+              })
               followHashtag({
                 variables: {hashtagId: i.id},
               })

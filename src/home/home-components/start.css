@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Allerta');
+@import url("https://fonts.googleapis.com/css?family=Allerta");
 
 body {
   background-color: white;
@@ -41,7 +41,7 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  background-image: url('../../imgs/world-wide.svg');
+  background-image: url("../../imgs/world-wide.svg");
   background-repeat: no-repeat;
   background-size: 60%;
   background-position: left center;
@@ -94,11 +94,6 @@ body {
 .sh4 {
   top: 140px;
   right: 50px;
-  animation-direction: alternate;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-name: ud;
-  animation-timing-function: ease-in-out;
 }
 .sh5 {
   top: 240px;
@@ -157,7 +152,7 @@ body {
 }
 
 .s-content .intro .t-intro h1 {
-  font-family: 'Allerta', sans-serif;
+  font-family: "Allerta", sans-serif;
   color: rgba(0, 0, 0, 0.75);
   font-size: 26px;
   font-weight: lighter;
@@ -259,7 +254,7 @@ body {
 }
 
 .box:after {
-  content: '';
+  content: "";
   display: block;
   left: 0;
   top: 0;

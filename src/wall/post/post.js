@@ -1,22 +1,22 @@
-import React, {Component} from 'react'
-import '../css/Wall.css'
+import React, { Component } from "react";
+import "../css/Wall.css";
 
 //components
-import PostReactions from './postreactions'
-import PostText from './posttext'
-import UserInfo from './userInfo'
-import PostDropdown from './dropdown'
+import PostReactions from "./postreactions";
+import PostText from "./posttext";
+import UserInfo from "./userInfo";
+import PostDropdown from "./dropdown";
 
 export default class Post extends Component {
   state = {
-    more: false,
-  }
+    more: false
+  };
 
   moreShow = () => {
-    const {more} = this.state
+    const { more } = this.state;
 
-    more ? this.setState({more: false}) : this.setState({more: true})
-  }
+    more ? this.setState({ more: false }) : this.setState({ more: true });
+  };
 
   render() {
     return (
@@ -36,6 +36,6 @@ export default class Post extends Component {
         {/* conatins the comments and the post reactions */}
         <PostReactions {...this.props} />
       </div>
-    )
+    );
   }
 }

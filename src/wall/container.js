@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
-import Scroll from 'react-scroll'
-import {Route, Switch} from 'react-router-dom'
-import gql from 'graphql-tag'
-import {useSubscription, useMutation} from 'react-apollo-hooks'
-import {useQuery} from 'react-apollo'
-import '../App.css'
-import _ from 'lodash'
+import React, { useState } from "react";
+import Scroll from "react-scroll";
+import { Route, Switch } from "react-router-dom";
+import gql from "graphql-tag";
+import { useSubscription, useMutation } from "react-apollo-hooks";
+import { useQuery } from "react-apollo";
+import "../App.css";
+import _ from "lodash";
 
 //components
-import Nav from './navbar/nav'
-import Wall from './wall/wall'
-import Profile from './profile/profile'
-import Dailymsg from './dailymsg/dailymsg'
-import Notification from './notification/notifications'
-import Spost from './spost/spost'
-import SelectHashtags from './wall/selectHashtags/selectHashtags'
+import Nav from "./navbar/nav";
+import Wall from "./wall/wall";
+import Profile from "./profile/profile";
+import Dailymsg from "./dailymsg/dailymsg";
+import Notification from "./notification/notifications";
+import Spost from "./spost/spost";
+import SelectHashtags from "./wall/selectHashtags/selectHashtags";
 
 const READ_NOTIFICATIONS = gql`
   query notifications($first: Int!, $skip: Int!) {
@@ -26,7 +26,7 @@ const READ_NOTIFICATIONS = gql`
       }
     }
   }
-`
+`;
 
 const NEW_NOTIFICATION_SUB = gql`
   subscription {
@@ -35,34 +35,34 @@ const NEW_NOTIFICATION_SUB = gql`
       code
     }
   }
-`
+`;
 const SET_SEEN_NOTIFICATION = gql`
   mutation setSeenNotification {
     setSeenNotifications {
       count
     }
   }
-`
+`;
 
-const scroll = Scroll.animateScroll
+const scroll = Scroll.animateScroll;
 
-export default function Container({changeToArabic, changeToEnglish, lang}) {
-  const [isNewNotification, setIsNewNotification] = useState(false)
+export default function Container({ changeToArabic, changeToEnglish, lang }) {
+  const [isNewNotification, setIsNewNotification] = useState(false);
   useSubscription(NEW_NOTIFICATION_SUB, {
-    onSubscriptionData: ({client, subscriptionData}) => {
-      if (subscriptionData) setIsNewNotification(true)
-    },
-  })
+    onSubscriptionData: ({ client, subscriptionData }) => {
+      if (subscriptionData) setIsNewNotification(true);
+    }
+  });
   useQuery(READ_NOTIFICATIONS, {
-    variables: {first: 20, skip: 0},
+    variables: { first: 20, skip: 0 },
     onCompleted: data => {
-      if (_.find(data.notifications.notification, {seen: false})) {
-        setIsNewNotification(true)
+      if (_.find(data.notifications.notification, { seen: false })) {
+        setIsNewNotification(true);
       }
-    },
-  })
+    }
+  });
 
-  const setSeenNotification = useMutation(SET_SEEN_NOTIFICATION)
+  const setSeenNotification = useMutation(SET_SEEN_NOTIFICATION);
 
   return (
     <div className="wall-wrapper">
@@ -83,8 +83,8 @@ export default function Container({changeToArabic, changeToEnglish, lang}) {
             exact
             path="/account/wall"
             render={() => {
-              scroll.scrollToTop()
-              return <Wall />
+              scroll.scrollToTop();
+              return <Wall />;
             }}
           />
           <Route exact path="/account/post/:id" component={Spost} />
@@ -92,29 +92,29 @@ export default function Container({changeToArabic, changeToEnglish, lang}) {
             exact
             path="/account/profile"
             render={() => {
-              scroll.scrollToTop()
-              return <Profile />
+              scroll.scrollToTop();
+              return <Profile />;
             }}
           />
           <Route
             exact
             path="/account/dailymsg"
             render={() => {
-              scroll.scrollToTop()
-              return <Dailymsg />
+              scroll.scrollToTop();
+              return <Dailymsg />;
             }}
           />
           <Route
             exact
             path="/account/notifications"
             render={() => {
-              setIsNewNotification(false)
-              setSeenNotification()
-              return <Notification />
+              setIsNewNotification(false);
+              setSeenNotification();
+              return <Notification />;
             }}
           />
         </Switch>
       </div>
     </div>
-  )
+  );
 }

@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import './App.css'
-import {Route, Switch} from 'react-router-dom'
-import withContext from './hooks/useAuthenticatedUser'
+import React, { Component } from "react";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import withContext from "./hooks/useAuthenticatedUser";
 //Components
-import Login from './home/login/'
-import Signup from './home/signup/'
-import Start from './home/'
-import ResetPassword from './home/resetPassword'
+import Login from "./home/login/";
+import Signup from "./home/signup/";
+import Start from "./home/";
+import ResetPassword from "./home/resetPassword";
 
-const LoginWithUser = withContext(Login)
+const LoginWithUser = withContext(Login);
 
 export default class app extends Component {
   render() {
@@ -32,6 +32,6 @@ export default class app extends Component {
           </Switch>
         </div>
       </div>
-    )
+    );
   }
 }

@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
-import '../../css/Wall.css'
-import {useMutation} from 'react-apollo-hooks'
-import {UPDATE_USER_MUTATION} from './updateUserMutation'
+import React, { useState } from "react";
+import "../../css/Wall.css";
+import { useMutation } from "react-apollo-hooks";
+import { UPDATE_USER_MUTATION } from "./updateUserMutation";
 
-export default function General({show}) {
-  const updateUser = useMutation(UPDATE_USER_MUTATION)
+export default function General({ show }) {
+  const updateUser = useMutation(UPDATE_USER_MUTATION);
 
   return (
-    <div className="general" style={{display: show ? 'flex' : 'none'}}>
+    <div className="general" style={{ display: show ? "flex" : "none" }}>
       <div className="general-content">
         <SettingInput
           label="Change your email:"
@@ -23,12 +23,12 @@ export default function General({show}) {
         />
       </div>
     </div>
-  )
+  );
 }
 
-function SettingInput({label, placeholder, onClick, name}) {
-  const [isFocues, setIsFocused] = useState(false)
-  const [InputValue, setInputValue] = useState('')
+function SettingInput({ label, placeholder, onClick, name }) {
+  const [isFocues, setIsFocused] = useState(false);
+  const [InputValue, setInputValue] = useState("");
 
   return (
     <>
@@ -44,8 +44,8 @@ function SettingInput({label, placeholder, onClick, name}) {
         <div className="bottom">
           <button
             onClick={() => {
-              setInputValue('')
-              setIsFocused(false)
+              setInputValue("");
+              setIsFocused(false);
             }}
           >
             Cancel
@@ -53,10 +53,10 @@ function SettingInput({label, placeholder, onClick, name}) {
           <button
             onClick={() =>
               onClick({
-                variables: {property: name, value: InputValue},
+                variables: { property: name, value: InputValue },
                 update: (proxy, res) => {
-                  console.log(res)
-                },
+                  console.log(res);
+                }
               })
             }
           >
@@ -65,5 +65,5 @@ function SettingInput({label, placeholder, onClick, name}) {
         </div>
       )}
     </>
-  )
+  );
 }

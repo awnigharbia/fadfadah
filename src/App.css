@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600');
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #root,
@@ -79,10 +79,10 @@
   font-weight: 300;
 }
 
-.app .form-wrap .form .form-normal input[type='text'],
-.app .form-wrap .form .form-normal input[type='password'],
-.app .form-wrap .form .form-normal input[type='email'],
-.app .form-wrap .form-reset input[type='text'] {
+.app .form-wrap .form .form-normal input[type="text"],
+.app .form-wrap .form .form-normal input[type="password"],
+.app .form-wrap .form .form-normal input[type="email"],
+.app .form-wrap .form-reset input[type="text"] {
   margin-top: 10px;
   min-width: 50%;
   min-height: 5%;
@@ -94,10 +94,10 @@
   outline: none;
 }
 
-.app .form-wrap .form .form-normal input[type='text']:focus,
-.app .form-wrap .form .form-normal input[type='password']:focus,
-.app .form-wrap .form .form-normal input[type='email']:focus,
-.app .form-wrap .form-reset input[type='text']:focus {
+.app .form-wrap .form .form-normal input[type="text"]:focus,
+.app .form-wrap .form .form-normal input[type="password"]:focus,
+.app .form-wrap .form .form-normal input[type="email"]:focus,
+.app .form-wrap .form-reset input[type="text"]:focus {
   background-color: white;
   border: 2px solid rgba(114, 114, 255, 0.8);
   transition: 0.2s ease;
@@ -133,7 +133,7 @@
 }
 
 .app .form-wrap .form .form-social {
-  background-image: url('./imgs/doodles.png');
+  background-image: url("./imgs/doodles.png");
   height: 100%;
   width: 50%;
 }

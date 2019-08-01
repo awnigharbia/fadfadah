@@ -1,13 +1,13 @@
-import React from 'react'
-import '../css/Wall.css'
-import {Old} from './old'
+import React from "react";
+import "../css/Wall.css";
+import { Old } from "./old";
 
 //imgs
-import logo from '../../imgs/small.png'
-import setting from '../../imgs/settings.png'
+import logo from "../../imgs/small.png";
+import setting from "../../imgs/settings.png";
 
 const Wnav = props => {
-  const {dropdown} = props
+  const { dropdown } = props;
 
   return (
     <nav>
@@ -32,7 +32,7 @@ const Wnav = props => {
             <img src={setting} alt="settings" />
             <div
               className="dropdown-content"
-              style={{display: dropdown ? 'block' : 'none'}}
+              style={{ display: dropdown ? "block" : "none" }}
             >
               <button onClick={props.showSettings}>Settings</button>
               <button onClick={props.logout}>Log out</button>
@@ -41,7 +41,7 @@ const Wnav = props => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Wnav
+export default Wnav;

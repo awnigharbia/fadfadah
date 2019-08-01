@@ -1,15 +1,15 @@
-import React from 'react'
-import '../css/Wall.css'
-import {Oldd} from './old'
+import React from "react";
+import "../css/Wall.css";
+import { Oldd } from "./old";
 
 //imgs
-import logo from '../../imgs/small.png'
-import wall from '../../imgs/newspaper.png'
-import dailymsg from '../../imgs/letter.png'
-import profile from '../../imgs/userM.png'
-import notifications from '../../imgs/notification.png'
-import settingsTop from '../../imgs/settingsT.png'
-import logout from '../../imgs/logoutT.png'
+import logo from "../../imgs/small.png";
+import wall from "../../imgs/newspaper.png";
+import dailymsg from "../../imgs/letter.png";
+import profile from "../../imgs/userM.png";
+import notifications from "../../imgs/notification.png";
+import settingsTop from "../../imgs/settingsT.png";
+import logout from "../../imgs/logoutT.png";
 
 const Mnav = props => {
   return (
@@ -38,7 +38,7 @@ const Mnav = props => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Mnav
+export default Mnav;

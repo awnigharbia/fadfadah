@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import '../App.css'
+import React, { Component } from "react";
+import "../App.css";
 
-import Link from './home-components/myLink'
+import Link from "./home-components/myLink";
 //logo
-import logo from '../imgs/logo.webp'
+import logo from "../imgs/logo.webp";
 
 export default class ResetPassword extends Component {
   render() {
@@ -27,16 +27,16 @@ export default class ResetPassword extends Component {
           <img src={logo} alt="logo" />
         </Link>
         <div className="form-reset">
-          <h1 style={{fontWeight: 500}}>Reset Password</h1>
+          <h1 style={{ fontWeight: 500 }}>Reset Password</h1>
           <input
             type="text"
             placeholder="email"
             autoFocus
-            style={{marginTop: 0}}
+            style={{ marginTop: 0 }}
           />
           <button type="submit">Reset</button>
         </div>
       </div>
-    )
+    );
   }
 }

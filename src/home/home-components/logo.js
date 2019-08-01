@@ -1,6 +1,6 @@
-import React from 'react'
-import '../../App.css'
-import './start.css'
+import React from "react";
+import "../../App.css";
+import "./start.css";
 
 const LoGo = () => (
   <div className="s-logo">
@@ -11,6 +11,6 @@ const LoGo = () => (
       <div className="title">Fadfada</div>
     </div>
   </div>
-)
+);
 
-export default LoGo
+export default LoGo;

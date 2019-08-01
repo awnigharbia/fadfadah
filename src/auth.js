@@ -1,4 +1,4 @@
-import ls from 'local-storage'
+import ls from "local-storage";
 
 class Auth {
   /**
@@ -7,15 +7,15 @@ class Auth {
    * @param {string} token
    */
   static authenticateUser(token) {
-    ls('token', token)
+    ls("token", token);
   }
   /**
    * Save a user object in Local Storage
    *
    * @param {object} token
    */
-  static saveUser({user}) {
-    ls('user', user)
+  static saveUser({ user }) {
+    ls("user", user);
   }
 
   /**
@@ -24,7 +24,7 @@ class Auth {
    * @returns {boolean}
    */
   static isUserAuthenticated() {
-    return ls('token') !== null
+    return ls("token") !== null;
   }
 
   /**
@@ -32,7 +32,7 @@ class Auth {
    *
    */
   static deauthenticateUser() {
-    ls.remove('token')
+    ls.remove("token");
   }
 
   /**
@@ -42,7 +42,7 @@ class Auth {
    */
 
   static getToken() {
-    return ls('token')
+    return ls("token");
   }
 
   /**
@@ -52,8 +52,8 @@ class Auth {
    */
 
   static getUser() {
-    return ls('user')
+    return ls("user");
   }
 }
 
-export default Auth
+export default Auth;
