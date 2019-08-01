@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Allerta');
+
+body {
+  background-color: white;
+}
+
+.s {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.s-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.s-nav .s-logo {
+  width: 150px;
+}
+
+#contact {
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.s-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../imgs/world-wide.svg');
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: left center;
+  background-color: #f2f2f2;
+}
+
+.shapes {
+  position: absolute;
+  opacity: 0.3;
+  left: calc(50% - 359px);
+}
+.sh1,
+.sh2,
+.sh3,
+.sh4,
+.sh5,
+.sh6,
+.sh7 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.sh1 {
+  left: 800px;
+  top: 140px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh2 {
+  top: 240px;
+  left: 700px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh3 {
+  top: 270px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh4 {
+  top: 140px;
+  right: 50px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh5 {
+  top: 240px;
+  right: 100px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh6 {
+  top: 240px;
+  left: 900px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+.sh7 {
+  right: 200px;
+  top: 170px;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: ud;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes ud {
+  0% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 4px, 0);
+    transform: translate3d(0, 4px, 0);
+  }
+}
+
+.s-content .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 2% 15% 0% 5%;
+}
+
+.s-content .intro img {
+  width: 667px;
+}
+
+.s-content .intro .t-intro {
+  align-self: flex-start;
+  text-align: center;
+}
+
+.s-content .intro .t-intro h1 {
+  font-family: 'Allerta', sans-serif;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+.s-content .intro .sl-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+.s-content .intro .sl-btns a {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 25px;
+  color: #fff;
+  margin: 5px;
+  padding: 10px 120px;
+  background-color: #6c63ff;
+  border: none;
+  transition: 0.1s ease-in;
+}
+
+.s-content .intro .sl-btns a:hover {
+  box-shadow: 0 2px 2px 0 rgba(108, 99, 255, 0.14),
+    0 1px 5px 0 rgba(108, 99, 255, 0.12), 0 3px 1px -2px rgba(108, 99, 255, 0.2);
+}
+
+.s-content .intro .sl-btns a:last-child {
+  background-color: #fff;
+  color: #6c63ff;
+}
+
+#changeable {
+  color: white;
+  background-color: #6c63ff;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.intro-body-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.intro-body-text p {
+  font-weight: 400;
+  margin: 0px;
+  padding: 3px;
+  border-radius: 2px;
+  text-align: left;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.intro-body-text span {
+  font-weight: bold;
+}
+
+/* Animation logo */
+.box {
+  width: 150px;
+  height: 40px;
+  border-radius: 25px;
+  box-shadow: 0 2px 30px rgba(black, 0.2);
+  background: lighten(#f0f4c3, 10%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  top: 3%;
+  left: 25%;
+  background: #6c63ff;
+  width: 150px;
+  height: 200px;
+  margin-left: -50px;
+  margin-top: -50px;
+  transform-origin: 70% 38%;
+  border-radius: 40%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(#e8a, 1),
+    rgba(#def, 0) 80%,
+    rgba(white, 0.5)
+  );
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.title {
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 40px;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: white;
+  font-size: 18px;
+  text-indent: 0.3em;
+}
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}

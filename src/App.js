@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import './App.css'
+import {Route, Switch} from 'react-router-dom'
+import withContext from './hooks/useAuthenticatedUser'
+//Components
+import Login from './home/login/'
+import Signup from './home/signup/'
+import Start from './home/'
+import ResetPassword from './home/resetPassword'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const LoginWithUser = withContext(Login)
+
+export default class app extends Component {
+  render() {
+    return (
+      <div className="app-wrapper">
+        <div className="app">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Start
+                  changeToArabic={this.props.changeToArabic}
+                  changeToEnglish={this.props.changeToEnglish}
+                />
+              )}
+            />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={LoginWithUser} />
+            <Route path="/ResetPassword" component={ResetPassword} />
+          </Switch>
+        </div>
+      </div>
+    )
+  }
 }
-
-export default App;

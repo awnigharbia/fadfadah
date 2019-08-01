@@ -1,12 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom'
+import registerServiceWorker from './registerServiceWorker'
+import {ApolloProvider} from 'react-apollo-hooks'
+import {ApolloProvider as ApolloProviderOfficial} from 'react-apollo'
+import {client} from './apolloClient'
+import {Provider} from './hooks/useAuthenticatedUser'
+import Auth from './auth'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//pages
+import HomeTr from './home/translation/tr'
+import WallTr from './wall/translation/tr'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Router>
+    <ApolloProviderOfficial client={client}>
+      <ApolloProvider client={client}>
+        <Provider>
+          <Switch>
+            <Route
+              path="/account/"
+              render={() => {
+                if (Auth.isUserAuthenticated()) {
+                  return <WallTr />
+                } else {
+                  return <Redirect to="/" />
+                }
+              }}
+            />
+            <Route
+              path="/"
+              render={() => {
+                if (Auth.isUserAuthenticated()) {
+                  return <Redirect to="/account/wall" />
+                } else {
+                  return <HomeTr />
+                }
+              }}
+            />
+          </Switch>
+        </Provider>
+      </ApolloProvider>
+    </ApolloProviderOfficial>
+  </Router>,
+  document.getElementById('root'),
+)
+registerServiceWorker()

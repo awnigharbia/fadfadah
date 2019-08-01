@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": ["react-hooks"],
+  "extends": ["eslint:recommended", "eslint-config-prettier"],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "env": {
+    "browser": true
+  }
+}
