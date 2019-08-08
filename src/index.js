@@ -1,25 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import registerServiceWorker from "./registerServiceWorker";
-import { ApolloProvider } from "react-apollo-hooks";
-import { ApolloProvider as ApolloProviderOfficial } from "react-apollo";
-import { client } from "./apolloClient";
-import { Provider } from "./hooks/useAuthenticatedUser";
-import Auth from "./auth";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
+import registerServiceWorker from './registerServiceWorker'
+import {ApolloProvider} from 'react-apollo-hooks'
+import {ApolloProvider as ApolloProviderOfficial} from 'react-apollo'
+import {client} from './apolloClient'
+import {Provider} from './hooks/useAuthenticatedUser'
+import Auth from './auth'
 
 //pages
-import HomeTr from "./home/translation/tr";
-import WallTr from "./wall/translation/tr";
+import HomeTr from './home/translation/tr'
+import WallTr from './wall/translation/tr'
 
 ReactDOM.render(
-  <Router>
+  <HashRouter>
     <ApolloProviderOfficial client={client}>
       <ApolloProvider client={client}>
         <Provider>
@@ -28,9 +23,9 @@ ReactDOM.render(
               path="/account/"
               render={() => {
                 if (Auth.isUserAuthenticated()) {
-                  return <WallTr />;
+                  return <WallTr />
                 } else {
-                  return <Redirect to="/" />;
+                  return <Redirect to="/" />
                 }
               }}
             />
@@ -38,9 +33,9 @@ ReactDOM.render(
               path="/"
               render={() => {
                 if (Auth.isUserAuthenticated()) {
-                  return <Redirect to="/account/wall" />;
+                  return <Redirect to="/account/wall" />
                 } else {
-                  return <HomeTr />;
+                  return <HomeTr />
                 }
               }}
             />
@@ -48,7 +43,7 @@ ReactDOM.render(
         </Provider>
       </ApolloProvider>
     </ApolloProviderOfficial>
-  </Router>,
-  document.getElementById("root")
-);
-registerServiceWorker();
+  </HashRouter>,
+  document.getElementById('root'),
+)
+registerServiceWorker()
