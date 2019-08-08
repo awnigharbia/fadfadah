@@ -12,7 +12,7 @@ import _ from 'lodash'
 const cache = new InMemoryCache()
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `wss://hidden-island-20400.herokuapp.com/`,
   options: {
     reconnect: true,
     connectionParams: {
@@ -22,7 +22,7 @@ const wsLink = new WebSocketLink({
 })
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000',
+  uri: 'https://hidden-island-20400.herokuapp.com/',
 })
 
 const inspectError = onError(({graphQLErrors, networkError}) => {
