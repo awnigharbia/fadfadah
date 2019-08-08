@@ -67,7 +67,7 @@ function Search({user}) {
         })}
       </Styled.searchResult>
       <Styled.searchInput>
-        <SearchIcon size="20px" />
+        <SearchIcon size="18px" />
         <Styled.input
           type="text"
           placeholder="Search #"

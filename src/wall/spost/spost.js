@@ -1,15 +1,14 @@
-import React from "react";
-import { injectIntl } from "react-intl";
-import gql from "graphql-tag";
-import withContext from "../../hooks/useAuthenticatedUser";
-import { useQuery } from "react-apollo-hooks";
-import "../css/Wall.css";
-import _ from "lodash";
+import React from 'react'
+import {injectIntl} from 'react-intl'
+import gql from 'graphql-tag'
+import withContext from '../../hooks/useAuthenticatedUser'
+import {useQuery} from 'react-apollo-hooks'
+import '../css/Wall.css'
+import _ from 'lodash'
 
 //components
-import Post from "../post/post";
-import Support from "../widgets/support";
-import SocialMedial from "../widgets/social";
+import Post from '../post/post'
+import Support from '../widgets/support'
 
 const STORY_QUERY = gql`
   query Story($storyId: String!) {
@@ -28,14 +27,14 @@ const STORY_QUERY = gql`
       }
     }
   }
-`;
+`
 
-function SinglePost({ intl, match, user }) {
-  const { loading, data, err } = useQuery(STORY_QUERY, {
-    variables: { storyId: match.params.id }
-  });
+function SinglePost({intl, match, user}) {
+  const {loading, data, err} = useQuery(STORY_QUERY, {
+    variables: {storyId: match.params.id},
+  })
 
-  if (err) return <div>Something went wrong!</div>;
+  if (err) return <div>Something went wrong!</div>
 
   if (loading)
     return (
@@ -43,8 +42,8 @@ function SinglePost({ intl, match, user }) {
         <div className="double-bounce1" />
         <div className="double-bounce2" />
       </div>
-    );
-  if (_.isEmpty(data)) return <div>Post Not Found!</div>;
+    )
+  if (_.isEmpty(data)) return <div>Post Not Found!</div>
 
   return (
     <div className="wa">
@@ -54,7 +53,7 @@ function SinglePost({ intl, match, user }) {
             <Post
               id={data.story.id}
               motivate={
-                _.find(data.story.likes, { likedBy: { id: user.id } })
+                _.find(data.story.likes, {likedBy: {id: user.id}})
                   ? true
                   : false
               }
@@ -65,12 +64,11 @@ function SinglePost({ intl, match, user }) {
         </div>
 
         <div className="right">
-          <SocialMedial />
-          <Support msg={intl.formatMessage({ id: "support.h1" })} />
+          <Support msg={intl.formatMessage({id: 'support.h1'})} />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default injectIntl(withContext(SinglePost));
+export default injectIntl(withContext(SinglePost))

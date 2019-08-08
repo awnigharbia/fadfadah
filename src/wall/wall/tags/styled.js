@@ -14,11 +14,12 @@ export const searchInput = styled.div`
   z-index: 2;
   margin: 0;
   border-radius: 25px;
+  align-items: center;
   padding: 0;
   transition: 0.2s ease;
-  border: 2px solid lightgray;
-  background-color: white;
-  padding: 3px 10px;
+  /* border: 2px solid lightgray; */
+  background-color: hsl(210, 9%, 96%);
+  padding: 5px 15px;
   ${input}:focus & {
     border: 2px solid black;
   }
@@ -31,6 +32,7 @@ export const input = styled.input.attrs({
   padding: 5px 4px;
   outline: none;
   font-size: 13px;
+  background-color: inherit;
   font-weight: 500;
 `
 

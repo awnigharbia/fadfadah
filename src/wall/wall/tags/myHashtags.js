@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import withContext from '../../../hooks/useAuthenticatedUser'
 import gql from 'graphql-tag'
 import {useMutation} from 'react-apollo-hooks'
+import {FormClose} from 'grommet-icons'
 
 const UNFOLLOW_MUTATION = gql`
   mutation unfollowHashtag($hashtagId: String!) {
@@ -61,7 +62,10 @@ function MyHashtags({user}) {
 function SearchItem({onClick, title}) {
   return (
     <div className="tag-search-result" onClick={onClick}>
-      <div className="tag-search-item">{title}</div>
+      <div className="tag-search-item">
+        {title}
+        <FormClose size="15px" />
+      </div>
     </div>
   )
 }
