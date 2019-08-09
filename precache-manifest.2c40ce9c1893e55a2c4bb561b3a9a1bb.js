@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6ae49c4dfeb1b5f9e18b",
+    "revision": "2d3261138a254a33f211",
     "url": "/fadfadah/static/css/main.9e366bd2.chunk.css"
   },
   {
-    "revision": "6ae49c4dfeb1b5f9e18b",
-    "url": "/fadfadah/static/js/main.0e8e3f12.chunk.js"
+    "revision": "2d3261138a254a33f211",
+    "url": "/fadfadah/static/js/main.bc703bce.chunk.js"
   },
   {
     "revision": "7a5d94aa85737b72a410",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/fadfadah/static/media/notification-msg.5d721673.png"
   },
   {
-    "revision": "3f038dda693be578c1d59deec99e60d3",
+    "revision": "408431c09b7649182084716af3b513ed",
     "url": "/fadfadah/index.html"
   }
 ];
