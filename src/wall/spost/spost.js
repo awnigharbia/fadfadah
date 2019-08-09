@@ -9,6 +9,8 @@ import _ from 'lodash'
 //components
 import Post from '../post/post'
 import Support from '../widgets/support'
+import Trending from '../widgets/trending'
+import MotivatedVideo from '../widgets/Video'
 
 const STORY_QUERY = gql`
   query Story($storyId: String!) {
@@ -58,12 +60,14 @@ function SinglePost({intl, match, user}) {
                   : false
               }
               text={data.story.body}
-              {...[data.story]}
+              {...data.story}
             />
           </div>
         </div>
 
         <div className="right">
+          <Trending />
+          <MotivatedVideo />
           <Support msg={intl.formatMessage({id: 'support.h1'})} />
         </div>
       </div>
