@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "97d4c8e7b8f44f0be2f6",
-    "url": "/fadfadah/static/css/main.9e366bd2.chunk.css"
+    "revision": "d304dd0baa27d067d858",
+    "url": "/fadfadah/static/css/main.151ca7f0.chunk.css"
   },
   {
-    "revision": "97d4c8e7b8f44f0be2f6",
-    "url": "/fadfadah/static/js/main.03fa2d41.chunk.js"
+    "revision": "d304dd0baa27d067d858",
+    "url": "/fadfadah/static/js/main.320853a3.chunk.js"
   },
   {
-    "revision": "7a5d94aa85737b72a410",
-    "url": "/fadfadah/static/js/runtime~main.cad65283.js"
+    "revision": "44ff71e5fd696538fb52",
+    "url": "/fadfadah/static/js/runtime~main.da99a29f.js"
   },
   {
-    "revision": "3009370caccaba285d55",
-    "url": "/fadfadah/static/js/2.6ae7bada.chunk.js"
+    "revision": "8d2a14f51a2a8ae00b6c",
+    "url": "/fadfadah/static/js/2.b1e603cd.chunk.js"
   },
   {
-    "revision": "da5c33a0d45bb1f3b31a",
-    "url": "/fadfadah/static/js/3.34948b05.chunk.js"
+    "revision": "c13e3864c6942d4dda6f",
+    "url": "/fadfadah/static/js/3.cc9cdf69.chunk.js"
   },
   {
     "revision": "8b33b22920514e7ead6b8635a751ac07",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/fadfadah/static/media/notification-msg.5d721673.png"
   },
   {
-    "revision": "ff3a17545c1d3b4f929a34df47e86116",
+    "revision": "f28366987ace849594cdaa89d09c5449",
     "url": "/fadfadah/index.html"
   }
 ];
