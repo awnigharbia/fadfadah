@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import '../css/Wall.css'
-import {Support, FormClose, StatusGood} from 'grommet-icons'
+import {Support, FormClose, StatusGood, Announce} from 'grommet-icons'
 import {useSetState} from '../../hooks/useSetState'
 import {useMutation} from 'react-apollo-hooks'
 import gql from 'graphql-tag'
@@ -91,7 +91,10 @@ function Modal({setState, handleFeedback, state}) {
     <div className="modal">
       <div className="support-modal-content" ref={ref}>
         <div className="topbar">
-          <p>Send Feedback</p>
+          <div className="feedback-title">
+            <Announce size="medium" color="gray" />
+            <p>Send Feedback</p>
+          </div>
           <FormClose
             size="medium"
             color="gray"

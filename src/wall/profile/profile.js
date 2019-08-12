@@ -7,6 +7,7 @@ import withContext from '../../hooks/useAuthenticatedUser'
 import ProfilePost from './profilePost'
 import profileImg from '../../imgs/profile-img.png'
 import DeleteModal from './deleteModal'
+import {GET_USER} from '../../query/currentUser'
 
 const DELETE_STORY = gql`
   mutation DeleteStory($storyId: String!) {
@@ -21,10 +22,14 @@ function Profile({user}) {
   const [deleteModal, setDeleteModal] = useState(false)
   const [storyId, setStoryId] = useState('')
   const deleteStory = useMutation(DELETE_STORY)
+
   function deleteConfirm() {
     deleteStory({
       variables: {storyId: storyId},
       update: (proxy, res) => {
+        const {userInfo} = proxy.readQuery({query: GET_USER})
+        userInfo.stories = userInfo.stories.filter(x => x.id !== storyId)
+        proxy.writeQuery({query: GET_USER, data: {userInfo, userInfo}})
         if (res.data.deleteStory.isDeleted) {
           setDeleteModal(false)
           setStoryId('')
