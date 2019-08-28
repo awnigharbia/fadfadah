@@ -40,7 +40,6 @@ const REMOVE_LIKE = gql`
 `
 
 export default function PostReactions({motivate, ...props}) {
-  console.log(props)
   const [state, setState] = useSetState({
     likesLength: props.likes.length,
     commentsLength: props.comments.length,
